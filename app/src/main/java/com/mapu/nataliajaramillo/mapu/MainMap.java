@@ -26,7 +26,7 @@ import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MainMap extends AppCompatActivity implements OnMapRedyCallBack {
+public class MainMap extends AppCompatActivity implements OnMapRedyCallBack  {
 
     private GoogleMap MapaCampus;
 
@@ -36,5 +36,15 @@ public class MainMap extends AppCompatActivity implements OnMapRedyCallBack {
     private final LatLng bLCorner = new LatLng(6.1932748,-75.5823696);
     private final LatLng tRCorner = new LatLng(6.203500,-75.577057);
     private final LatLngBounds MapaCampusBounds = new LatLngBounds(bLCorner, tRCorner);
+
+
+    //para la ubicacion del usuario en el mapa
+    private LatLng userMarkerPosition;
+    private String userMarkerTitle;
+
+    private HttpHandler httpHandler = new HttpHandler();
+    private final String ACTION_MARKERS = "/markers";
+    private final String ACTION_CREATE_USER_MARKER = "/create_user_marker";
+    private Map<String, String> paramsForHttpPost = new HashMap<String, String>();
 
 }
