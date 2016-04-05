@@ -44,40 +44,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MainMap extends AppCompatActivity {
 
-    private GoogleMap MapaCampus;
-
-    //Propiedades del mapa del campus.             y          x
-    private final LatLng Eafit = new LatLng(6.200696,-75.578433); //Encontrado en GoogleMaps.
-    private int minZoom = 17;
-    private final LatLng bLCorner = new LatLng(6.1932748,-75.5823696);
-    private final LatLng tRCorner = new LatLng(6.203500,-75.577057);
-    private final LatLngBounds MapaCampusBounds = new LatLngBounds(bLCorner, tRCorner);
-
-
-    //para la ubicacion del usuario en el mapa
-    private LatLng userMarkerPosition;
-    private String userMarkerTitle;
-
-    //private HttpHandler httpHandler = new HttpHandler();
-    private final String ACTION_MARKERS = "/markers";
-    private final String ACTION_CREATE_USER_MARKER = "/create_user_marker";
-    private Map<String, String> paramsForHttpPost = new HashMap<String, String>();
-
-    //Declaracion de la variable con su EditText para luego hacer un set en un String, para la busqueda por voz y un
-    //Indicador si no se encuentra el resultado
-       //BuscarVista buscarVista = null;
-       //EditText buscarVistaEditText;
-
-    // Menu Lateral
-    ListView drawer = null;
-    DrawerLayout drawerLayout = null;
-    ActionBarDrawerToggle toggle = null;
-    ArrayList<String> menuToShow = new ArrayList<String>();
-    ArrayList<Integer> menuToShowIds = new ArrayList<Integer>();
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
