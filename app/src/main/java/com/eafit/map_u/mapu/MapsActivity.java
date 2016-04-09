@@ -46,10 +46,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+
         // Propiedades del mapa
+
         LatLng eafit = new LatLng(6.200072, -75.577730);
         LatLng bloq31 = new LatLng(6.200319, -75.578143);
-        mMap.addMarker(new MarkerOptions().position(bloq31).title("Bloque 31"));
+        LatLng bloq29 = new LatLng(6.200320, -75.578643);
+        LatLng bloq28 = new LatLng(6.200336, -75.578966);
+        LatLng bloq27 = new LatLng(6.200301, -75.579148);
+        LatLng bloq30 = new LatLng(6.200634, -75.579070);
+        LatLng bloq32 = new LatLng(6.201051, -75.578436);
+        mMap.addMarker(new MarkerOptions().position(bloq32).title("Biblioteca Luis Echavarria Villegas"));
+        mMap.addMarker(new MarkerOptions().position(bloq30).title("Departamento de Música"));
+        mMap.addMarker(new MarkerOptions().position(bloq27).title("Escuela de Derecho"));
+        mMap.addMarker(new MarkerOptions().position(bloq28).title("Auditorio Fundadores"));
+        mMap.addMarker(new MarkerOptions().position(bloq29).title("Direccion Administrativa y Financiera"));
+        mMap.addMarker(new MarkerOptions().position(bloq31).title("Centro de Idiomas"));
         mMap.addMarker(new MarkerOptions().position(eafit).title("Eafit"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(eafit));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(17.0f));
