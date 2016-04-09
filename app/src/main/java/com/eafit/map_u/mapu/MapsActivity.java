@@ -2,6 +2,7 @@ package com.eafit.map_u.mapu;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import java.util.HashMap;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -45,10 +46,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
-        // Add a marker in Sydney and move the camera
-        LatLng eafit = new LatLng(6.200696,-75.578433);
-        mMap.addMarker(new MarkerOptions().position(eafit).title("Marcador en Eafit"));
+        // Propiedades del mapa
+        LatLng eafit = new LatLng(6.200072, -75.577730);
+        LatLng bloq31 = new LatLng(6.200319, -75.578143);
+        mMap.addMarker(new MarkerOptions().position(bloq31).title("Bloque 31"));
+        mMap.addMarker(new MarkerOptions().position(eafit).title("Eafit"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(eafit));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(17.0f));
     }
+
 }
