@@ -50,8 +50,26 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Propiedades del mapa
 
         LatLng eafit = new LatLng(6.200072, -75.577730);
+        LatLng gym = new LatLng(6.198904, -75.578045);
+        LatLng cafeteriap = new LatLng(6.199213, -75.578434);
+        LatLng canchas3 = new LatLng(6.198529, -75.578365);
+        LatLng canchas2 = new LatLng(6.199694, -75.578378);
         LatLng peatonal5 = new LatLng(6.199203, -75.579390);
+        LatLng peatonal3 = new LatLng(6.197665, -75.578389);
+        LatLng vehicular2 = new LatLng(6.199538, -75.577791);
+        LatLng peatonal7= new LatLng(6.202943, -75.577850);
+        LatLng vehicular8 = new LatLng(6.201817, -75.577513);
+        LatLng vehicular6 = new LatLng(6.201551, -75.578933);
+
+        LatLng bloq7 = new LatLng(6.199234, -75.578092);
+        LatLng bloq12 = new LatLng(6.197330, -75.579146);
+        LatLng bloq17 = new LatLng(6.199090, -75.578863);
         LatLng bloq18 = new LatLng(6.199368, -75.578926);
+        LatLng bloq19 = new LatLng(6.197916, -75.579628);
+        LatLng bloq20 = new LatLng(6.198479, -75.579092);
+        LatLng bloq21 = new LatLng(6.198494, -75.579493);
+        LatLng bloq22 = new LatLng(6.198755, -75.579217);
+        LatLng bloq23 = new LatLng(6.198976, -75.579254);
         LatLng bloq26 = new LatLng(6.199832, -75.579076);
         LatLng bloq27 = new LatLng(6.200301, -75.579148);
         LatLng bloq28 = new LatLng(6.200336, -75.578966);
@@ -62,17 +80,25 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng bloq33 = new LatLng(6.200910, -75.578959);
         LatLng bloq34 = new LatLng(6.201117, -75.579036);
         LatLng bloq35 = new LatLng(6.201346, -75.578961);
-        LatLng PorteriaRegional1= new LatLng(6.201551, -75.578933);
         LatLng bloq37 = new LatLng(6.202009, -75.578880);
         LatLng bloq38 = new LatLng(6.201619, -75.578367);
         LatLng Canchas1 = new LatLng(6.202506, -75.578631);
-        LatLng Porteria4sur= new LatLng(6.202943, -75.577850);
 
-        mMap.addMarker(new MarkerOptions().position(Porteria4sur).title("Porteria Peatonal 4 sur"));
+
+        mMap.addMarker(new MarkerOptions().position(gym).title("Centro de Acondicionamiento Fisico"));
+        mMap.addMarker(new MarkerOptions().position(cafeteriap).title("Cafeteria Principal"));
+        mMap.addMarker(new MarkerOptions().position(canchas3).title("Cancha Sintetica"));
+        mMap.addMarker(new MarkerOptions().position(canchas2).title("Piscina y Cancha cubierta"));
+        mMap.addMarker(new MarkerOptions().position(peatonal3).title("Porteria 3 Vehicular y Peatonal"));
+        mMap.addMarker(new MarkerOptions().position(vehicular2).title("Porteria 2 Vehicular"));
+        mMap.addMarker(new MarkerOptions().position(peatonal5).title("Centro Argos para la Inovación"));
+        mMap.addMarker(new MarkerOptions().position(peatonal7).title("Porteria 7 Peatonal"));
+        mMap.addMarker(new MarkerOptions().position(vehicular6).title("Porteria 6 y Cafeteria"));
+        mMap.addMarker(new MarkerOptions().position(vehicular8).title("Porteria 8 Vehicular"));
         mMap.addMarker(new MarkerOptions().position(Canchas1).title("Canchas de tenis y futbol"));
-        mMap.addMarker(new MarkerOptions().position(bloq38).title("Departamento de ciencias basicas"));
-        mMap.addMarker(new MarkerOptions().position(bloq37).title("Instituto de Capacitación e Investigación del Plastico y del Caucho"));
-        mMap.addMarker(new MarkerOptions().position(PorteriaRegional1).title("Porteria Regional 1 y Cafeteria"));
+
+        mMap.addMarker(new MarkerOptions().position(bloq38).title("Bloque 38 Departamento de ciencias basicas"));
+        mMap.addMarker(new MarkerOptions().position(bloq37).title(" Bloque 37 Instituto de Capacitación e Investigación del Plastico y del Caucho"));
         mMap.addMarker(new MarkerOptions().position(bloq35).title("Bloque 35 Aulas"));
         mMap.addMarker(new MarkerOptions().position(bloq34).title("Bloque 34 Aulas"));
         mMap.addMarker(new MarkerOptions().position(bloq33).title("Oficina de Relaciones Internacionales"));
@@ -82,11 +108,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(bloq29).title("Direccion Administrativa y Financiera"));
         mMap.addMarker(new MarkerOptions().position(bloq28).title("Auditorio Fundadores"));
         mMap.addMarker(new MarkerOptions().position(bloq27).title("Escuela de Derecho"));
-        mMap.addMarker(new MarkerOptions().position(bloq26).title("Escuela de Administarcion, Economia y Finanzas"));
+        mMap.addMarker(new MarkerOptions().position(bloq26).title("Bloque 26 Escuela de Administarcion, Economia y Finanzas"));
+        mMap.addMarker(new MarkerOptions().position(bloq23).title("Bloque 23 Aulas"));
+        mMap.addMarker(new MarkerOptions().position(bloq22).title("Bloque 22 Laboratorios"));
+        mMap.addMarker(new MarkerOptions().position(bloq21).title("Bloque 22 Talleres"));
+        mMap.addMarker(new MarkerOptions().position(bloq20).title("Bloque 20 Talleres, Aulas, Oficina Representantes Estudiantiles"));
+        mMap.addMarker(new MarkerOptions().position(bloq19).title("Bloque 19 Escuela de Ingenieria"));
         mMap.addMarker(new MarkerOptions().position(bloq18).title("Rectoria, Dirección de docencia, Centro de Informatica, Departamento de practicas"));
-        mMap.addMarker(new MarkerOptions().position(peatonal5).title("Centro Argos para la Inovación"));
+        mMap.addMarker(new MarkerOptions().position(bloq17).title("Laboratorio Financiero, Aulas"));
+        mMap.addMarker(new MarkerOptions().position(bloq12).title("Bloque 12 Departamento de Desarrollo Artistico"));
+        mMap.addMarker(new MarkerOptions().position(bloq7).title("Bloque 7 Carnetizacion, Aulas, univesidad de los niños"));
 
-        mMap.addMarker(new MarkerOptions().position(eafit).title("Porteria peatonal 1 Eafit"));
+        mMap.addMarker(new MarkerOptions().position(eafit).title("Porteria 1 Peatonal Av. Las Vegas Eafit"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(eafit));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(17.0f));
     }
