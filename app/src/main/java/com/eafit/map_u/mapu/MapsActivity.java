@@ -1,5 +1,6 @@
 package com.eafit.map_u.mapu;
 
+import android.graphics.Color;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import java.util.HashMap;
@@ -8,6 +9,8 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -33,6 +36,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
     }
 
+    // metodo para agregar color a los markers
+    public BitmapDescriptor getMarkerIcon(String color) {
+        float[] hsv = new float[3];
+        Color.colorToHSV(Color.parseColor(color), hsv);
+        return BitmapDescriptorFactory.defaultMarker(hsv[0]);
+    }
 
     /**
      * Manipulates the map once available.
@@ -85,7 +94,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng Canchas1 = new LatLng(6.202506, -75.578631);
 
 
-        mMap.addMarker(new MarkerOptions().position(gym).title("Centro de Acondicionamiento Fisico"));
+        mMap.addMarker(new MarkerOptions().position(gym).title("Centro de Acondicionamiento Fisico").icon(getMarkerIcon("#0070DE")));
         mMap.addMarker(new MarkerOptions().position(cafeteriap).title("Cafeteria Principal"));
         mMap.addMarker(new MarkerOptions().position(canchas3).title("Cancha Sintetica"));
         mMap.addMarker(new MarkerOptions().position(canchas2).title("Piscina y Cancha cubierta"));
