@@ -1,16 +1,13 @@
 package com.eafit.map_u.mapu;
 
-/**
- * Created by sofia on 4/04/16.
- */
-import android.content.Intent;
-import android.content.pm.ActivityInfo;
+
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Window;
-
 import java.util.Timer;
 import java.util.TimerTask;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.view.Window;
 
 public class Splash extends AppCompatActivity{
     private static final long SPLASH_SCREEN_DELAY = 3000;
@@ -24,7 +21,7 @@ public class Splash extends AppCompatActivity{
         // Hide title bar
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-        //corregir setContentView(R.layout.splash);
+        setContentView(R.layout.splash);
 
         TimerTask task = new TimerTask() {
             @Override
