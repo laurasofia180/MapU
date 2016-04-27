@@ -10,7 +10,7 @@ import android.content.pm.ActivityInfo;
 import android.view.Window;
 
 public class Splash extends AppCompatActivity{
-    private static final long SPLASH_SCREEN_DELAY = 3000;
+    private static final long SPLASH_SCREEN_DELAY = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class Splash extends AppCompatActivity{
 
                 // Start the next activity
                 Intent mainIntent = new Intent().setClass(
-                        Splash.this, MainMap.class);
+                        Splash.this, MapsActivity.class);
                 startActivity(mainIntent);
 
                 // Close the activity so the user won't able to go back this
