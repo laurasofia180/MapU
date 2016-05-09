@@ -1,12 +1,17 @@
 package com.eafit.map_u.mapu;
 
 import android.graphics.Color;
-import android.support.v4.app.FragmentActivity;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.widget.Toast;
+import android.support.v4.content.ContextCompat;
 
-import java.util.HashMap;
-
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -16,17 +21,25 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener;
+
 
 public class MapsActivity extends ActionBarActivity implements OnMapReadyCallback {
+    //OnMyLocationButtonClickListener
 
     private GoogleMap mMap;
 
     //Propiedades mapa campus
 
     private int minZoom = 17;
-    private final LatLng bLCorner = new LatLng(6.1932748,-75.5823696);
-    private final LatLng tRCorner = new LatLng(6.203500,-75.577057);
+    private final LatLng bLCorner = new LatLng(6.1932748, -75.5823696);
+    private final LatLng tRCorner = new LatLng(6.203500, -75.577057);
     private final LatLngBounds MapaCampusBounds = new LatLngBounds(bLCorner, tRCorner);
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +49,9 @@ public class MapsActivity extends ActionBarActivity implements OnMapReadyCallbac
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     // metodo para agregar color a los markers
@@ -43,6 +59,27 @@ public class MapsActivity extends ActionBarActivity implements OnMapReadyCallbac
         float[] hsv = new float[3];
         Color.colorToHSV(Color.parseColor(color), hsv);
         return BitmapDescriptorFactory.defaultMarker(hsv[0]);
+    }
+
+    //Geolocalizacion del usuario
+
+
+    private void enableMyLocation() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            // Permission to access the location is missing.
+            //PermissionUtils.requestPermission(this, LOCATION_PERMISSION_REQUEST_CODE,
+            // Manifest.permission.ACCESS_FINE_LOCATION, true);
+        } else if (mMap != null) {
+            // Access to the location has been granted to the app.
+            mMap.setMyLocationEnabled(true);
+        }
+
+    }
+
+    public boolean onMyLocationButtonClick() {
+        Toast.makeText(this, "Su Ubicación", Toast.LENGTH_SHORT).show();
+        return false;
     }
 
     /**
@@ -66,18 +103,18 @@ public class MapsActivity extends ActionBarActivity implements OnMapReadyCallbac
         // Propiedades del mapa
 
 
-        LatLng gym        = new LatLng(6.198904, -75.578045);
+        LatLng gym = new LatLng(6.198904, -75.578045);
         LatLng cafeteriap = new LatLng(6.199213, -75.578434);
-        LatLng canchas3   = new LatLng(6.198529, -75.578365);
-        LatLng canchas2   = new LatLng(6.199694, -75.578378);
-        LatLng peatonal5  = new LatLng(6.199203, -75.579390);
-        LatLng peatonal3  = new LatLng(6.197665, -75.578389);
+        LatLng canchas3 = new LatLng(6.198529, -75.578365);
+        LatLng canchas2 = new LatLng(6.199694, -75.578378);
+        LatLng peatonal5 = new LatLng(6.199203, -75.579390);
+        LatLng peatonal3 = new LatLng(6.197665, -75.578389);
         LatLng vehicular2 = new LatLng(6.199538, -75.577791);
-        LatLng peatonal7  = new LatLng(6.202943, -75.577850);
+        LatLng peatonal7 = new LatLng(6.202943, -75.577850);
         LatLng vehicular8 = new LatLng(6.201817, -75.577513);
         LatLng vehicular6 = new LatLng(6.201551, -75.578933);
 
-        LatLng bloq7  = new LatLng(6.199234, -75.578092);
+        LatLng bloq7 = new LatLng(6.199234, -75.578092);
         LatLng bloq12 = new LatLng(6.197330, -75.579146);
         LatLng bloq17 = new LatLng(6.199090, -75.578863);
         LatLng bloq18 = new LatLng(6.199368, -75.578926);
@@ -170,4 +207,43 @@ public class MapsActivity extends ActionBarActivity implements OnMapReadyCallbac
 
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client.connect();
+        Action viewAction = Action.newAction(
+                Action.TYPE_VIEW, // TODO: choose an action type.
+                "Maps Page", // TODO: Define a title for the content shown.
+                // TODO: If you have web page content that matches this app activity's content,
+                // make sure this auto-generated web page URL is correct.
+                // Otherwise, set the URL to null.
+                Uri.parse("http://host/path"),
+                // TODO: Make sure this auto-generated app URL is correct.
+                Uri.parse("android-app://com.eafit.map_u.mapu/http/host/path")
+        );
+        AppIndex.AppIndexApi.start(client, viewAction);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        Action viewAction = Action.newAction(
+                Action.TYPE_VIEW, // TODO: choose an action type.
+                "Maps Page", // TODO: Define a title for the content shown.
+                // TODO: If you have web page content that matches this app activity's content,
+                // make sure this auto-generated web page URL is correct.
+                // Otherwise, set the URL to null.
+                Uri.parse("http://host/path"),
+                // TODO: Make sure this auto-generated app URL is correct.
+                Uri.parse("android-app://com.eafit.map_u.mapu/http/host/path")
+        );
+        AppIndex.AppIndexApi.end(client, viewAction);
+        client.disconnect();
+    }
 }

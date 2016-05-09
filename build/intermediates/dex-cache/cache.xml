@@ -1,2 +1,250 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/libs/internal_impl-23.2.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/internal_impl-23.2.1_4712d3d8142fdd15ced16c9133a03cfe60a5e196.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a8412b654dab86d57bf90683367488211c8a81f1">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-location-8.4.0_92e3b1026b8983ecda37d508f74a1374dea35065.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="1a78298e7724d5440d210bcb946b3493250d354d">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-plus-8.4.0_d984d52727a0fa61c081e66760791ef3077179f3.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="9cad249cf62751a323d9af568caf12284b7d6062">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-nearby-8.4.0_4dc160fd4c25e6dc9ccd001c6bdbd5adede1d005.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="0194a7409c40de94fb539d4ad9928ec5d47afeb7">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-safetynet-8.4.0_da7dd3f328f0ff10260e8751e8946c4b594e5069.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="2d7fe76982677315c4dc4edfb459c8ca718a9d4c">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-gcm-8.4.0_e38df40026bbb496771ab2773aac614bd30c09d6.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="04de44f90606c77f3b28cf44861f306290505aac">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-maps-8.4.0_db69ad85dbb273b11163c50357354cf5dcb8866e.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="bbb0a1dcc836e51eab35ed61f9d712917722c6d1">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_8e270a143ed388f22a715a054eb92b36b9f2e97f.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="08d34b2d135c1cc96ab506fd8bf6916d1e2f391a">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-panorama-8.4.0_40e81b07747bedc8fef56ac836d6fda16e6a0683.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="b5e7892fb0708e792e0e933c4c0a0ca0ac7831fb">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-ads-8.4.0_2632a50599d5829a58a00d0e542d015e8a94d397.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="c54246475c1bb64ac6857d1320364bfbfeda2c46">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-fitness-8.4.0_bd9d2a34eb267454a09347d6d8a0c8a3960f620a.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="1c9f35e952b212c843f7bd2c7eec8e82ad95602e">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-analytics-8.4.0_5922185b1d715faf87c38b238b8e609d4b60b393.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="dfecc4d835cdabcdecf7e95f0d20a3ef1e9d8ef4">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-vision-8.4.0_38e6723bcdb6ee14ef05789394cba27c51491f31.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-measurement/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="613298b7aa012f121ce542881c0a599ebd8078f2">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-measurement-8.4.0_5ffd62f1a059f3ff779820cd97156bf4798723eb.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="f2df436a8f02ce7e4d7d209671fc45f97c470f0e">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-wallet-8.4.0_18442daeb98171729bc3622e495f65a01f07ffc7.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="3469cb457f10f74c28cbc05f069b6c894f6cbdd0">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-23.2.1_658b0b127cbb5abbf3522763c211e412e29e5159.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-appindexing-8.4.0_eb11e04b37f2cc212c913e21fdd1ecdc49a73ebb.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="e4d0cbb0b999604b349062f0214a0a228a7fd151">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.2.1_c752fa9d8837567eafccf12e2b88ed0e6e78a465.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="551e78f21acf69ebfb489c0e79647824c838013e">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-cast-8.4.0_4b71ccfd6e32fa3d4fa9cb75d7e5df854cfe9be7.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="e167a34eaca0b31704212f43f9576ea84e05046f">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-wearable-8.4.0_8294f4d56b45184ea06ddaa5faac25d74bd00580.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="b82b8e847173c28efffcd291b2a0b1ae9ad17fa4">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-identity-8.4.0_d7dc6da956690ca9f633cc1aeecb962a5f5abaf7.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.1/support-annotations-23.2.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/support-annotations-23.2.1_4267e3b0995b5d30fdb9b815a54a1b662cfcae73.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.android.support/design/23.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="72961d8b453b46e277702f18de9d210bc019e36e">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.android.support-design-23.2.1_d4a850a052b02aa1f68f836bc452b5351ee71ffb.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="673d77a5bbddd766037f088e775df525c46407f0">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.2.1_196b05bffe5bd281ea99bc770b69d6ca1e7b53ef.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="9fe026fb4c7fce21bc5142f6e1bdf844f28061ac">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-appinvite-8.4.0_4a72c198787c552519d47a40b0139fd56ce26873.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-8.4.0_1738f0ace46b8e8d919e4a8c126f605a10a9d8be.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-8.4.0_ad54270ef7b513a2c84e51be735aa0e79048592f.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="d358b3dd49a7c67844622dcbc9cf4339e13952ce">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.android.support-mediarouter-v7-23.0.0_55f15eed9263f1814caa247109f516d6739da18b.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.2.1_a9a02110c2c5a6865942cbecbb8064da2c1cd2de.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/jars/libs/internal_impl-23.0.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="03d38bb042efe3e5ce27ba66b729a9523c36d8fe">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.0_0cfb4cffa1b06879901e8e590eb3b2e3c6c60180.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="3a364cc6b698d1b3b2d284f64618daaa7fe77ddf">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-games-8.4.0_aa5aab3555a1782b593f69e0170d7a4d85c2745e.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.2.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="e3885783ff8926ed9e2fdcd16816c2e1e73e7aee">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.2.1_c2becb7d67fc9b5b2bccdda0848cf17a23f7e434.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="966e5771a5a2ebfb31bf00d7cd6cd2546d245517">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-auth-8.4.0_5d7d9d876dee43588e118cd6f696f85bd15cd572.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="3429f11fb8688ffd973976f2c5e42f8c04d8c94c">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/instant-run_18faf6f89b7fe7f8961f857241bac848311e76d7.jar" />
+    </item>
+    <item
+        jar="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/8.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="b36f30ac5ee5d5214f4b1e2ac49f11889d58e71a">
+        <dex dex="/Users/sofia/Dropbox/Eafit/Clases/Proyecto1/MapU/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-drive-8.4.0_0e51de7e6b7a31c5c77e05bb3254f13e9b241186.jar" />
+    </item>
+
+</items>
