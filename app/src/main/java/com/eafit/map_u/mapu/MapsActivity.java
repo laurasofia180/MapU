@@ -1,25 +1,16 @@
 package com.eafit.map_u.mapu;
 
-
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.Manifest;
 import android.content.pm.PackageManager;
-import android.widget.Toast;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.app.ActivityCompat;
-
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.UiSettings;
-import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
@@ -53,33 +44,29 @@ public class MapsActivity extends ActionBarActivity implements
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
-        mapFragment.getMap().setPadding(0, 1400, 0, 100);
     }
-
-
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
 
+        //Propiedades del mapa
+        mMap = googleMap;
         LatLng eafit = new LatLng(6.200072, -75.577730);
         mMap.addMarker(new MarkerOptions().position(eafit).title("Porteria 1 Peatonal Av. Las Vegas Eafit")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(eafit));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(16.0f));
-        mMap.setOnMyLocationButtonClickListener(this);
+
         // Ubicacion del Usuario
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED) {
-            System.out.println("Dafuq");
-        } else if (mMap != null) {
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             mMap.setMyLocationEnabled(true);
+        } else {
+            System.out.println("Dafuq");
         }
         mMap.getUiSettings().setMyLocationButtonEnabled(true);
-        // Propiedades del mapa
+
+        // Markers
 
         LatLng gym = new LatLng(6.198904, -75.578045);
         LatLng cafeteriap = new LatLng(6.199213, -75.578434);
@@ -181,22 +168,13 @@ public class MapsActivity extends ActionBarActivity implements
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
         mMap.addMarker(new MarkerOptions().position(bloq7).title("Bloque 7 Carnetizacion, Aulas, univesidad de los niños")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
-
-
-
     }
-
-
-
-
-
+    /**
+     * Método que se llama cuando oprimo el My Location Button
+     */
     @Override
     public boolean onMyLocationButtonClick() {
-        Toast.makeText(this, "Su Ubicacion", Toast.LENGTH_SHORT).show();
-        // Return false so that we don't consume the event and the default behavior still occurs
-        // (the camera animates to the user's current position).
         return false;
     }
-
-
+    
 }
