@@ -1,11 +1,16 @@
 package com.eafit.map_u.mapu;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.Manifest;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.app.ActivityCompat;
+import android.util.Log;
+import android.widget.Toast;
+
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -14,13 +19,15 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener;
-
+import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 
 public class MapsActivity extends ActionBarActivity implements
         OnMapReadyCallback,
         OnMyLocationButtonClickListener,
+        OnMarkerClickListener,
         ActivityCompat.OnRequestPermissionsResultCallback{
 
     private boolean mPermissionDenied = false;
@@ -44,11 +51,19 @@ public class MapsActivity extends ActionBarActivity implements
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+
+
+    }
+
+   // Metodo para hacer clickeable el marker
+    private void setMarker() {
+        mMap.setOnMarkerClickListener(this);
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-
+        //mMap.setOnMarkerClickListener(this);
         //Propiedades del mapa
         mMap = googleMap;
         LatLng eafit = new LatLng(6.200072, -75.577730);
@@ -56,7 +71,7 @@ public class MapsActivity extends ActionBarActivity implements
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(eafit));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(16.0f));
-
+        mMap.setOnMarkerClickListener(this);
         // Ubicacion del Usuario
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
@@ -176,5 +191,23 @@ public class MapsActivity extends ActionBarActivity implements
     public boolean onMyLocationButtonClick() {
         return false;
     }
-    
+
+    /**
+     * Método que se llama cuando oprimo el Marker me salta a otra actividad
+     */
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+
+        Toast.makeText(getApplicationContext(), "Your toast message.",
+                Toast.LENGTH_SHORT).show();
+
+        if (marker.getTitle().equals("Rectoria, Dirección de docencia, Centro de Informatica, Departamento de practicas")){
+            final Context con = this;
+            Intent intent = new Intent(con, InfoBloq.class);
+            startActivity(intent);
+        }
+
+        return false;
+    }
+
 }
