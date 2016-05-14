@@ -37,8 +37,9 @@ public class MapsActivity extends ActionBarActivity implements
     //Propiedades mapa campus
 
     private int minZoom = 17;
+    private final LatLng UniEafit = new LatLng(6.200696D, -75.578433D);
     private final LatLng bLCorner = new LatLng(6.1932748, -75.5823696);
-    private final LatLng tRCorner = new LatLng(6.203500, -75.577057);
+    private final LatLng tRCorner = new LatLng(6.203500, -75.577057 );
     private final LatLngBounds MapaCampusBounds = new LatLngBounds(bLCorner, tRCorner);
 
     private GoogleApiClient client;
@@ -198,7 +199,7 @@ public class MapsActivity extends ActionBarActivity implements
     @Override
     public boolean onMarkerClick(Marker marker) {
 
-        Toast.makeText(getApplicationContext(), "Your toast message.",
+        Toast.makeText(getApplicationContext(), " ",
                 Toast.LENGTH_SHORT).show();
 
         if (marker.getTitle().equals("Rectoria, Dirección de docencia, Centro de Informatica, Departamento de practicas")){
