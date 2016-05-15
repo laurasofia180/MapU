@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/logo"
+    android:background="#ffffff"
     tools:context=".Splash">
 
     <TextView
@@ -11,9 +11,20 @@
         android:layout_height="wrap_content"
         android:text="Map-U"
         android:id="@+id/map"
-        android:textSize="70sp"
+        android:textSize="60sp"
         android:textColor="#2a98c8"
-        android:layout_alignParentTop="true"
+        android:layout_above="@+id/imageView1"
         android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:src="@mipmap/logo"
+        android:layout_gravity="center_vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="78dp" />
 
 </RelativeLayout>
