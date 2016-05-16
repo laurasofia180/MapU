@@ -11,6 +11,7 @@ import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.widget.Toast;
 
+
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -23,6 +24,8 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
+
+import java.lang.reflect.Method;
 
 public class MapsActivity extends ActionBarActivity implements
         OnMapReadyCallback,
@@ -59,6 +62,7 @@ public class MapsActivity extends ActionBarActivity implements
 
    // Metodo para hacer clickeable el marker
     private void setMarker() {
+
         mMap.setOnMarkerClickListener(this);
     }
 
@@ -121,11 +125,7 @@ public class MapsActivity extends ActionBarActivity implements
 
         mMap.addMarker(new MarkerOptions().position(gym).title("Centro de Acondicionamiento Fisico")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
-        mMap.addMarker(new MarkerOptions().position(cafeteriap).title("Cafeteria Principal")
-                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
         mMap.addMarker(new MarkerOptions().position(canchas3).title("Cancha Sintetica")
-                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
-        mMap.addMarker(new MarkerOptions().position(canchas2).title("Piscina y Cancha cubierta")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
         mMap.addMarker(new MarkerOptions().position(peatonal3).title("Porteria 3 Vehicular y Peatonal")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
@@ -139,30 +139,30 @@ public class MapsActivity extends ActionBarActivity implements
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
         mMap.addMarker(new MarkerOptions().position(vehicular8).title("Porteria 8 Vehicular")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
-        mMap.addMarker(new MarkerOptions().position(Canchas1).title("Canchas de tenis y futbol")
-                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
 
+        mMap.addMarker(new MarkerOptions().position(Canchas1).title("Bloque 39 Canchas de tenis y futbol")
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
         mMap.addMarker(new MarkerOptions().position(bloq38).title("Bloque 38 Departamento de ciencias basicas")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
-        mMap.addMarker(new MarkerOptions().position(bloq37).title(" Bloque 37 Instituto de Capacitación e Investigación del Plastico y del Caucho")
+        mMap.addMarker(new MarkerOptions().position(bloq37).title("Bloque 37 Instituto de Capacitación e Investigación del Plastico y del Caucho")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
         mMap.addMarker(new MarkerOptions().position(bloq35).title("Bloque 35 Aulas")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
         mMap.addMarker(new MarkerOptions().position(bloq34).title("Bloque 34 Aulas")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
-        mMap.addMarker(new MarkerOptions().position(bloq33).title("Oficina de Relaciones Internacionales")
+        mMap.addMarker(new MarkerOptions().position(bloq33).title("Bloque 33 Oficina de Relaciones Internacionales")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
-        mMap.addMarker(new MarkerOptions().position(bloq32).title("Biblioteca Luis Echavarria Villegas")
+        mMap.addMarker(new MarkerOptions().position(bloq32).title("Bloque 32 Biblioteca Luis Echavarria Villegas")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
-        mMap.addMarker(new MarkerOptions().position(bloq31).title("Centro de Idiomas")
+        mMap.addMarker(new MarkerOptions().position(bloq31).title("Bloque 31 Centro de Idiomas")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
-        mMap.addMarker(new MarkerOptions().position(bloq30).title("Departamento de Música")
+        mMap.addMarker(new MarkerOptions().position(bloq30).title("Bloque 30 Departamento de Música")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
-        mMap.addMarker(new MarkerOptions().position(bloq29).title("Direccion Administrativa y Financiera")
+        mMap.addMarker(new MarkerOptions().position(bloq29).title("Bloque 29 Direccion Administrativa y Financiera")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
-        mMap.addMarker(new MarkerOptions().position(bloq28).title("Auditorio Fundadores")
+        mMap.addMarker(new MarkerOptions().position(bloq28).title("Bloque 28 Auditorio Fundadores")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
-        mMap.addMarker(new MarkerOptions().position(bloq27).title("Escuela de Derecho")
+        mMap.addMarker(new MarkerOptions().position(bloq27).title("Bloque 27 Escuela de Derecho")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
         mMap.addMarker(new MarkerOptions().position(bloq26).title("Bloque 26 Escuela de Administarcion, Economia y Finanzas")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
@@ -170,19 +170,23 @@ public class MapsActivity extends ActionBarActivity implements
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
         mMap.addMarker(new MarkerOptions().position(bloq22).title("Bloque 22 Laboratorios")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
-        mMap.addMarker(new MarkerOptions().position(bloq21).title("Bloque 22 Talleres")
+        mMap.addMarker(new MarkerOptions().position(bloq21).title("Bloque 21 Talleres")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
         mMap.addMarker(new MarkerOptions().position(bloq20).title("Bloque 20 Talleres, Aulas, Oficina Representantes Estudiantiles")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
         mMap.addMarker(new MarkerOptions().position(bloq19).title("Bloque 19 Escuela de Ingenieria")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
-        mMap.addMarker(new MarkerOptions().position(bloq18).title("Rectoria, Dirección de docencia, Centro de Informatica, Departamento de practicas")
+        mMap.addMarker(new MarkerOptions().position(bloq18).title("Bloque 18 Rectoria, Dirección de docencia, Centro de Informatica, Departamento de practicas")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
-        mMap.addMarker(new MarkerOptions().position(bloq17).title("Laboratorio Financiero, Aulas")
+        mMap.addMarker(new MarkerOptions().position(bloq17).title("Bloque 17 Laboratorio Financiero, Aulas")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
         mMap.addMarker(new MarkerOptions().position(bloq12).title("Bloque 12 Departamento de Desarrollo Artistico")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
+        mMap.addMarker(new MarkerOptions().position(cafeteriap).title("Bloque 9 Cafeteria Principal")
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
         mMap.addMarker(new MarkerOptions().position(bloq7).title("Bloque 7 Carnetizacion, Aulas, univesidad de los niños")
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
+        mMap.addMarker(new MarkerOptions().position(canchas2).title("Bloque 4 Piscina y Cancha cubierta")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
     }
     /**
@@ -194,18 +198,187 @@ public class MapsActivity extends ActionBarActivity implements
     }
 
     /**
+     *
      * Método que se llama cuando oprimo el Marker me salta a otra actividad
      */
-    @Override
-    public boolean onMarkerClick(Marker marker) {
+        @Override
+        public boolean onMarkerClick(Marker marker) {
 
-        Toast.makeText(getApplicationContext(), " ",
-                Toast.LENGTH_SHORT).show();
 
-        if (marker.getTitle().equals("Rectoria, Dirección de docencia, Centro de Informatica, Departamento de practicas")){
             final Context con = this;
             Intent intent = new Intent(con, InfoBloq.class);
-            startActivity(intent);
+
+
+            switch (marker.getTitle()) {
+
+                case "Centro de Acondicionamiento Fisico":
+                    Toast.makeText(getApplicationContext(), "Centro de Acondicionamiento Fisico",
+                            Toast.LENGTH_SHORT).show();
+                     startActivity(intent);
+                    break;
+                case "Cancha Sintetica":
+                    Toast.makeText(getApplicationContext(), "Cancha Sintetica",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                case "Porteria 3 Vehicular y Peatonal":
+                    Toast.makeText(getApplicationContext(), "Porteria 3 Vehicular y Peatonal",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                case "Porteria 2 Vehicular":
+                    Toast.makeText(getApplicationContext(), "Porteria 2 Vehicular",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                case "Centro Argos para la Inovación":
+                    Toast.makeText(getApplicationContext(), "Centro Argos para la Inovación",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                case "Porteria 7 Peatonal":
+                    Toast.makeText(getApplicationContext(), "Porteria 7 Peatonal",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                case "Porteria 6 y Cafeteria":
+                    Toast.makeText(getApplicationContext(), "Porteria 6 y Cafeteria",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                case "Porteria 8 Vehicular":
+                    Toast.makeText(getApplicationContext(), "Porteria 8 Vehicular",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+
+                    break;
+                case "Bloque 4 Piscina y Cancha cubierta":
+                    Toast.makeText(getApplicationContext(), "Bloque 4 Piscina y Cancha cubierta",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                case "Bloque 7 Carnetizacion, Aulas, univesidad de los niños":
+                    Toast.makeText(getApplicationContext(), "Bloque 7 Carnetizacion, Aulas, univesidad de los niños",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                case "Bloque 9 Cafeteria Principal":
+                    Toast.makeText(getApplicationContext(), "Bloque 9 Cafeteria Principal",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                case "Bloque 12 Departamento de Desarrollo Artistico":
+                    Toast.makeText(getApplicationContext(), "Bloque 12 Departamento de Desarrollo Artistico",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                case "Bloque 17 Laboratorio Financiero, Aulas":
+                    Toast.makeText(getApplicationContext(), "Bloque 17 Laboratorio Financiero, Aulas",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                case "Bloque 18Rectoria, Dirección de docencia, Centro de Informatica, Departamento de practicas":
+                    Toast.makeText(getApplicationContext(), "Bloque 18Rectoria, Dirección de docencia, Centro de Informatica, Departamento de practicas",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                case "Bloque 19 Escuela de Ingenieria":
+                    Toast.makeText(getApplicationContext(), "Bloque 19 Escuela de Ingenieria",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                case "Bloque 20 Talleres, Aulas, Oficina Representantes Estudiantiles":
+                    Toast.makeText(getApplicationContext(), "Bloque 20 Talleres, Aulas, Oficina Representantes Estudiantiles",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                case "Bloque 21 Talleres":
+                    Toast.makeText(getApplicationContext(), "Bloque 21 Talleres",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                case "Bloque 22 Laboratorios":
+                    Toast.makeText(getApplicationContext(), "Bloque 22 Laboratorios",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                case "Bloque 23 Aulas":
+                    Toast.makeText(getApplicationContext(), "Bloque 23 Aulas",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                case "Bloque 26 Escuela de Administarcion, Economia y Finanzas":
+                    Toast.makeText(getApplicationContext(), "Bloque 26 Escuela de Administarcion, Economia y Finanzas",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                case "Bloque 27 Escuela de Derecho":
+                    Toast.makeText(getApplicationContext(), "Bloque 27 Escuela de Derecho",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                case "Bloque 28 Auditorio Fundadores":
+                    Toast.makeText(getApplicationContext(), "Bloque 28 Auditorio Fundadores",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                case "Bloque 29 Direccion Administrativa y Financiera":
+                    Toast.makeText(getApplicationContext(), "Bloque 29 Direccion Administrativa y Financiera",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                case "Bloque 30 Departamento de Música":
+                    Toast.makeText(getApplicationContext(), "Bloque 30 Departamento de Música",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                case "Bloque 31 Centro de Idiomas":
+                    Toast.makeText(getApplicationContext(), "Bloque 31 Centro de Idiomas",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                case "Bloque 32 Biblioteca Luis Echavarria Villegas":
+                    Toast.makeText(getApplicationContext(), "Bloque 32 Biblioteca Luis Echavarria Villegas",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                case "Bloque 33 Oficina de Relaciones Internacionales":
+                    Toast.makeText(getApplicationContext(), "Bloque 33 Oficina de Relaciones Internacionales",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                case "Bloque 34 Aulas":
+                    Toast.makeText(getApplicationContext(), "Bloque 31 Centro de Idiomas",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                case "Bloque 35 Aulas":
+                    Toast.makeText(getApplicationContext(), "Bloque 35 Aulas",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                case "Bloque 37 Instituto de Capacitación e Investigación del Plastico y del Caucho":
+                    Toast.makeText(getApplicationContext(), "Bloque 37 Instituto de Capacitación e Investigación del Plastico y del Caucho",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                case "Bloque 38 Departamento de ciencias basicas":
+                    Toast.makeText(getApplicationContext(), "Bloque 38 Departamento de ciencias basicas",
+                            Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                    break;
+                 case "Bloque 39 Canchas de tenis y futbol":
+                     Toast.makeText(getApplicationContext(), "Bloque 39 Canchas de tenis y futbol",
+                             Toast.LENGTH_SHORT).show();
+                     startActivity(intent);
+                    break;
+
+
+
+                //if (marker.getTitle().equals("Rectoria, Dirección de docencia, Centro de Informatica, Departamento de practicas")){
+            //final Context con = this;
+            //Intent intent = new Intent(con, InfoBloq.class);
+            //startActivity(intent);
         }
 
         return false;

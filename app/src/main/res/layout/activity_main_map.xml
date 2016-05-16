@@ -7,8 +7,6 @@
     android:fitsSystemWindows="true"
     tools:context="com.eafit.map_u.mapu.MainMap">
 
-
-
-    <include layout="@layout/content_main_map" />
+    <include layout="@menu/menu_main_map" />
 
 </android.support.design.widget.CoordinatorLayout>
