@@ -36,7 +36,12 @@
         <activity
             android:name=".InfoBloq"
             android:label="@string/title_activity_info_bloq"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme"
+            android:parentActivityName="com.eafit.map_u.mapu.MapsActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.eafit.map_u.mapu.MapsActivity" />
+        </activity>
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
