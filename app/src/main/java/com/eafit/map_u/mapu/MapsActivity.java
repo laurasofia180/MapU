@@ -277,8 +277,8 @@ public class MapsActivity extends ActionBarActivity implements
                             Toast.LENGTH_SHORT).show();
                     startActivity(intent);
                     break;
-                case "Bloque 18Rectoria, Dirección de docencia, Centro de Informatica, Departamento de practicas":
-                    Toast.makeText(getApplicationContext(), "Bloque 18Rectoria, Dirección de docencia, Centro de Informatica, Departamento de practicas",
+                case "Bloque 18 Rectoria, Dirección de docencia, Centro de Informatica, Departamento de practicas":
+                    Toast.makeText(getApplicationContext(), "Bloque 18 Rectoria, Dirección de docencia, Centro de Informatica, Departamento de practicas",
                             Toast.LENGTH_SHORT).show();
                     startActivity(intent);
                     break;

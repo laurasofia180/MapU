@@ -11,17 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426190724) do
+ActiveRecord::Schema.define(version: 20160520155819) do
 
   create_table "blocks", force: :cascade do |t|
-    t.integer  "IdBloque"
     t.integer  "NoBloque"
-    t.text     "Info"
-    t.integer  "TotalSalon"
-    t.integer  "TotalDependencias"
-    t.integer  "TotalComercio"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.text     "InfoBloque"
+    t.integer  "IdBloque"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "dependencies", force: :cascade do |t|

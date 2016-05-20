@@ -1,15 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  idBloque: 
-  N¶¦Bloque: 
-  TotalSalon: 
-  TotalDependencias: 
-  TotalComercio: 
+  NoBloque: 1
+  InfoBloque: MyText
+  IdBloque: 1
 
 two:
-  idBloque: 
-  N¶¦Bloque: 
-  TotalSalon: 
-  TotalDependencias: 
-  TotalComercio: 
+  NoBloque: 1
+  InfoBloque: MyText
+  IdBloque: 1
