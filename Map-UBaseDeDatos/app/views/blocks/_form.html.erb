@@ -4,12 +4,19 @@
 		*<%= messages %>
 	</div>
 	<%end%>
+	
+     <div class="field">
+		<%= f.text_area :NoBloque, placeholder: "Ingresa el N° del Bloque" %>
+	 </div>
+	
+    <div class="field">
+		<%= f.text_area :InfoBloque, placeholder: "Ingresar La información del bloque", style:"height:350px; width:1000px;", class:"form-control" %>
+	 </div>
+	
 	<div class="field">
 		<%= f.text_field :IdBloque, placeholder: "IdBloque" %>
 	 </div>
-	 <div class="field">
-		<%= f.text_area :NoBloque, placeholder: "Ingresa el N° del Bloque" %>
-	 </div>
+
 	 <div class="field">
 		<%= f.submit "Guardar" %>
 	</div>

@@ -47,6 +47,6 @@ class BlocksController < ApplicationController
 	
 	private
 	def block_params
-		params.require(:block).permit(:IdBloque,:NoBloque)
+		params.require(:block).permit(:IdBloque,:NoBloque,:InfoBloque)
 	end
 end
