@@ -57,8 +57,7 @@ public class MapsActivity extends AppCompatActivity  implements
     // Log tag
     private static final String TAG = MapsActivity.class.getSimpleName();
     // Movies json url
-//    private static final String url = "https://mapu.herokuapp.com/blocks.json";
-    private static final String url = "http://api.androidhive.info/json/movies.json";
+    private static final String url = "https://mapu.herokuapp.com/blocks.json";
     private List<Bloque> bloqueList = new ArrayList<Bloque>();
 
     //Propiedades mapa campus
@@ -103,6 +102,7 @@ public class MapsActivity extends AppCompatActivity  implements
                                 e.printStackTrace();
                             }
                         }
+                        refreshMap();
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -122,19 +122,8 @@ public class MapsActivity extends AppCompatActivity  implements
         mMap.setOnMarkerClickListener(this);
     }
 
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-//        mMap.setOnMarkerClickListener(this);
-        //Propiedades del mapa
-        mMap = googleMap;
-        LatLng eafit = new LatLng(6.200072, -75.577730);
-
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMap().setPadding(0, 1000, 0, 0);
-
-
-        /*for (int i = 0; i < bloqueList.size(); i++) {
+    public void refreshMap(){
+        for (int i = 0; i < bloqueList.size(); i++) {
             System.out.println("Creando marcadores "+
                     "titulo "+bloqueList.get(i).getNombre()+
                     " lat "+bloqueList.get(i).getLatitud()+
@@ -149,10 +138,40 @@ public class MapsActivity extends AppCompatActivity  implements
                     .position(new LatLng(bloqueList.get(i).getLatitud(), bloqueList.get(i).getLongitud()))
                     .title(bloqueList.get(i).getNombre())
                     .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
-        }*/
+        }
+    }
 
-        mMap.addMarker(new MarkerOptions().position(eafit).title("Porteria 1 Peatonal Av. Las Vegas Eafit")
-                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+//        mMap.setOnMarkerClickListener(this);
+        //Propiedades del mapa
+        mMap = googleMap;
+        LatLng eafit = new LatLng(6.200072, -75.577730);
+
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMap().setPadding(0, 1000, 0, 0);
+
+
+        for (int i = 0; i < bloqueList.size(); i++) {
+            System.out.println("Creando marcadores "+
+                    "titulo "+bloqueList.get(i).getNombre()+
+                    " lat "+bloqueList.get(i).getLatitud()+
+                    " long "+bloqueList.get(i).getLongitud());
+
+            int id = bloqueList.get(i).getId();
+            String name = bloqueList.get(i).getNombre();
+            double lat = bloqueList.get(i).getLatitud();
+            double lon = bloqueList.get(i).getLongitud();
+
+            mMap.addMarker(new MarkerOptions()
+                    .position(new LatLng(bloqueList.get(i).getLatitud(), bloqueList.get(i).getLongitud()))
+                    .title(bloqueList.get(i).getNombre())
+                    .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
+        }
+
+//        mMap.addMarker(new MarkerOptions().position(eafit).title("Porteria 1 Peatonal Av. Las Vegas Eafit")
+//                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(eafit));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(16.0f));
         mMap.setOnMarkerClickListener(this);
@@ -166,7 +185,7 @@ public class MapsActivity extends AppCompatActivity  implements
         mMap.getUiSettings().setMyLocationButtonEnabled(true);
 
         // Markers
-
+/*
         LatLng gym = new LatLng(6.198904, -75.578045);
         LatLng cafeteriap = new LatLng(6.199213, -75.578434);
         LatLng canchas3 = new LatLng(6.198529, -75.578365);
@@ -267,7 +286,7 @@ public class MapsActivity extends AppCompatActivity  implements
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
         mMap.addMarker(new MarkerOptions().position(canchas2).title("Bloque 4 Piscina y Cancha cubierta")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
-
+*/
     }
     /**
      * Método que se llama cuando oprimo el My Location Button
