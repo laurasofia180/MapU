@@ -57,7 +57,8 @@ public class MapsActivity extends AppCompatActivity  implements
     // Log tag
     private static final String TAG = MapsActivity.class.getSimpleName();
     // Movies json url
-    private static final String url = "https://mapu.herokuapp.com/blocks.json";
+//    private static final String url = "https://mapu.herokuapp.com/blocks.json";
+    private static final String url = "http://api.androidhive.info/json/movies.json";
     private List<Bloque> bloqueList = new ArrayList<Bloque>();
 
     //Propiedades mapa campus
@@ -123,7 +124,7 @@ public class MapsActivity extends AppCompatActivity  implements
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap.setOnMarkerClickListener(this);
+//        mMap.setOnMarkerClickListener(this);
         //Propiedades del mapa
         mMap = googleMap;
         LatLng eafit = new LatLng(6.200072, -75.577730);
