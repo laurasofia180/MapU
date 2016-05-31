@@ -12,6 +12,10 @@ import android.util.Log;
 import android.widget.Toast;
 
 
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -25,6 +29,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 
+import org.json.JSONArray;
+
 import java.lang.reflect.Method;
 
 public class MapsActivity extends ActionBarActivity implements
@@ -32,6 +38,8 @@ public class MapsActivity extends ActionBarActivity implements
         OnMyLocationButtonClickListener,
         OnMarkerClickListener,
         ActivityCompat.OnRequestPermissionsResultCallback{
+    // Log tag
+    private static final String TAG = MapsActivity.class.getSimpleName();
 
     private boolean mPermissionDenied = false;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
@@ -56,8 +64,18 @@ public class MapsActivity extends ActionBarActivity implements
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-
-
+        JsonArrayRequest request1 = new JsonArrayRequest("http://map-u.herokuapp.com/blocks.json",
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        Log.d(TAG, response.toString());
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        VolleyLog.d(TAG, "Error: " + error.getMessage());
+                    }
+                });
     }
 
    // Metodo para hacer clickeable el marker
