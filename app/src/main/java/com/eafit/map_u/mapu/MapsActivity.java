@@ -41,7 +41,10 @@ import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 
 import com.eafit.map_u.mapu.controller.AppController;
 
+import com.eafit.map_u.mapu.InfoBloq;
+
 import java.lang.reflect.Method;
+
 
 
 //ActionBarActivity
@@ -69,6 +72,7 @@ public class MapsActivity extends AppCompatActivity  implements
     private final LatLngBounds MapaCampusBounds = new LatLngBounds(bLCorner, tRCorner);
 
     private GoogleApiClient client;
+    private InfoBloq bloq = new InfoBloq();;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,7 +100,9 @@ public class MapsActivity extends AppCompatActivity  implements
                                         .doubleValue());
                                 bloque.setLongitud(((Number) obj.get("longitud"))
                                         .doubleValue());
-                                // adding motel to motels array
+                                bloque.setNombre(obj.getString("descripcion"));
+                                bloque.setNumSalones(obj.getInt("numSalones"));
+
                                 bloqueList.add(bloque);
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -204,18 +210,22 @@ public class MapsActivity extends AppCompatActivity  implements
 
             final Context con = this;
             Intent intent = new Intent(con, InfoBloq.class);
+
             for (int i = 0;i<bloqueList.size();i++){
                 if(bloqueList.get(i).getNombre().equals(marker.getTitle())){
-                    Toast.makeText(this,marker.getTitle(),
-                            Toast.LENGTH_LONG).show();
+                    //Toast.makeText(this,marker.getTitle(),Toast.LENGTH_LONG).show();
+                    bloq.Datos(bloqueList.get(i).getNombre(), bloqueList);
+                    intent.putExtra("title", bloqueList.get(i).getNombre());
+                    intent.putExtra("des",bloqueList.get(i).getDescripcion());
+                    intent.putExtra("numClass",bloqueList.get(i).getNumSalones());
                     startActivity(intent);
                 }
             }
-            if (marker.getTitle().equals("Rectoria, Dirección de docencia, Centro de Informatica, Departamento de practicas")){
+            /*if (marker.getTitle().equals("Rectoria, Dirección de docencia, Centro de Informatica, Departamento de practicas")){
                 //final Context con = this;
                 //Intent intent = new Intent(con, InfoBloq.class);
 
-            }
+            }*/
         return false;
     }
 

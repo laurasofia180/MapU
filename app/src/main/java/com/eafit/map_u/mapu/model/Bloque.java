@@ -11,7 +11,7 @@ public class Bloque {
     public Bloque() {
     }
 
-    public Bloque(int id, int numSalones, String nombre, String descripcion, double latitud, double longitud) {
+    public Bloque(int id,String nombre, double latitud, double longitud, String descripcion, int numSalones) {
         this.id = id;
         this.numSalones = numSalones;
         this.nombre = nombre;
