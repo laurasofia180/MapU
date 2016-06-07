@@ -12,6 +12,7 @@ import android.view.View;
 
 import com.android.volley.toolbox.NetworkImageView;
 import com.eafit.map_u.mapu.model.Bloque;
+
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,21 +21,21 @@ import java.util.List;
 
 public class InfoBloq extends ActionBarActivity {
     private String nombre, name;
-    private List<Bloque> bloquedescripcion ;
+    private List<Bloque> bloquedescripcion;
     private String descripcion;
     private int numSalones;
     private TextView title, description, nums;
 
 
-    public void Datos (String nombre, List<Bloque> bloqueList) {
+    public void Datos(String nombre, List<Bloque> bloqueList) {
         this.nombre = nombre;
         this.bloquedescripcion = bloqueList;
 
         for (int i = 0; i < bloquedescripcion.size(); i++) {
             if (nombre.equals(bloquedescripcion.get(i).getNombre())) {
-                name      = bloquedescripcion.get(i).getNombre();
+                name = bloquedescripcion.get(i).getNombre();
                 descripcion = bloquedescripcion.get(i).getDescripcion();
-                numSalones  = bloquedescripcion.get(i).getNumSalones();
+                numSalones = bloquedescripcion.get(i).getNumSalones();
             }
         }
     }
@@ -61,9 +62,9 @@ public class InfoBloq extends ActionBarActivity {
         String printable = Integer.toString(numSal);
         //Toast.makeText(this, dato_Recibido, Toast.LENGTH_LONG).show();
 
-         title  = (TextView) findViewById(R.id.nombre);
-         description  = (TextView) findViewById(R.id.descripcion);
-         nums  = (TextView) findViewById(R.id.numSalones);
+        title = (TextView) findViewById(R.id.textView2);
+        description = (TextView) findViewById(R.id.textView4);
+        nums = (TextView) findViewById(R.id.textView6);
 
         title.setText(tit);
         description.setText(des);
@@ -71,4 +72,4 @@ public class InfoBloq extends ActionBarActivity {
     }
 
 
- }
+}
