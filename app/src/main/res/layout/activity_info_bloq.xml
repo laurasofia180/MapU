@@ -123,6 +123,21 @@
                 android:id="@+id/textView6"
                 android:layout_column="0" />
         </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="350dp"
+                android:layout_height="200dp"
+                android:id="@+id/bloque"
+                android:layout_column="0" />
+        </TableRow>
     </TableLayout>
 
 </RelativeLayout>

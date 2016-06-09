@@ -1,6 +1,7 @@
 package com.eafit.map_u.mapu;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.Manifest;
@@ -19,10 +20,13 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONException;
+
 import com.android.volley.toolbox.JsonArrayRequest;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyLog;
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.android.volley.VolleyError;
 
@@ -46,13 +50,12 @@ import com.eafit.map_u.mapu.InfoBloq;
 import java.lang.reflect.Method;
 
 
-
 //ActionBarActivity
-public class MapsActivity extends AppCompatActivity  implements
+public class MapsActivity extends AppCompatActivity implements
         OnMapReadyCallback,
         OnMyLocationButtonClickListener,
-        OnMarkerClickListener{
-        //ActivityCompat.OnRequestPermissionsResultCallback{
+        OnMarkerClickListener {
+    //ActivityCompat.OnRequestPermissionsResultCallback{
 
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     private GoogleMap mMap;
@@ -60,7 +63,7 @@ public class MapsActivity extends AppCompatActivity  implements
     // Log tag
     private static final String TAG = MapsActivity.class.getSimpleName();
     // Movies json url
-    private static final String url = "https://mapu.herokuapp.com/blocks.json";
+    private static final String url = "https://map-u.herokuapp.com/blocks.json";
     private List<Bloque> bloqueList = new ArrayList<Bloque>();
 
     //Propiedades mapa campus
@@ -68,11 +71,17 @@ public class MapsActivity extends AppCompatActivity  implements
     private int minZoom = 17;
     private final LatLng UniEafit = new LatLng(6.200696D, -75.578433D);
     private final LatLng bLCorner = new LatLng(6.1932748, -75.5823696);
-    private final LatLng tRCorner = new LatLng(6.203500, -75.577057 );
+    private final LatLng tRCorner = new LatLng(6.203500, -75.577057);
     private final LatLngBounds MapaCampusBounds = new LatLngBounds(bLCorner, tRCorner);
 
     private GoogleApiClient client;
-    private InfoBloq bloq = new InfoBloq();;
+    private InfoBloq bloq = new InfoBloq();
+
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient client2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,15 +103,14 @@ public class MapsActivity extends AppCompatActivity  implements
                             try {
                                 JSONObject obj = response.getJSONObject(i);
                                 Bloque bloque = new Bloque();
-                                bloque.setId(obj.getInt("id"));
+                                bloque.setURL(obj.getString("imagen"));
                                 bloque.setNombre(obj.getString("nombre"));
                                 bloque.setLatitud(((Number) obj.get("latitud"))
                                         .doubleValue());
                                 bloque.setLongitud(((Number) obj.get("longitud"))
                                         .doubleValue());
-                                bloque.setNombre(obj.getString("descripcion"));
+                                bloque.setDescripcion(obj.getString("descripcion"));
                                 bloque.setNumSalones(obj.getInt("numSalones"));
-
                                 bloqueList.add(bloque);
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -120,23 +128,22 @@ public class MapsActivity extends AppCompatActivity  implements
         AppController.getInstance().addToRequestQueue(bloqueReq);
 
 
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client2 = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
-   // Metodo para hacer clickeable el marker
-    private void setMarker() {
+    // Metodo para hacer clickeable el marker
+    private void setMarker() {mMap.setOnMarkerClickListener(this);}
 
-        mMap.setOnMarkerClickListener(this);
-    }
-
-   //Para refrescar el mapa con los marcadores desde la base de datos
-    public void refreshMap(){
+    //Para refrescar el mapa con los marcadores desde la base de datos
+    public void refreshMap() {
         for (int i = 0; i < bloqueList.size(); i++) {
-            System.out.println("Creando marcadores "+
-                    "titulo "+bloqueList.get(i).getNombre()+
-                    " lat "+bloqueList.get(i).getLatitud()+
-                    " long "+bloqueList.get(i).getLongitud());
+            System.out.println("Creando marcadores " +
+                    "titulo " + bloqueList.get(i).getNombre() +
+                    " lat " + bloqueList.get(i).getLatitud() +
+                    " long " + bloqueList.get(i).getLongitud());
 
-            int id = bloqueList.get(i).getId();
             String name = bloqueList.get(i).getNombre();
             double lat = bloqueList.get(i).getLatitud();
             double lon = bloqueList.get(i).getLongitud();
@@ -152,7 +159,12 @@ public class MapsActivity extends AppCompatActivity  implements
     public void onMapReady(GoogleMap googleMap) {
 //        mMap.setOnMarkerClickListener(this);
         //Propiedades del mapa
+
         mMap = googleMap;
+
+        mMap.getUiSettings().setZoomControlsEnabled(true);
+        mMap.getUiSettings().setMyLocationButtonEnabled(true);
+
         LatLng eafit = new LatLng(6.200072, -75.577730);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -162,12 +174,12 @@ public class MapsActivity extends AppCompatActivity  implements
         // Me crea el marker en la posicion deseada en el mapa
 
         for (int i = 0; i < bloqueList.size(); i++) {
-            System.out.println("Creando marcadores "+
-                    "titulo "+bloqueList.get(i).getNombre()+
-                    " lat "+bloqueList.get(i).getLatitud()+
-                    " long "+bloqueList.get(i).getLongitud());
+            System.out.println("Creando marcadores " +
+                    "titulo " + bloqueList.get(i).getNombre() +
+                    " lat " + bloqueList.get(i).getLatitud() +
+                    " long " + bloqueList.get(i).getLongitud());
 
-            int id = bloqueList.get(i).getId();
+            //int id = bloqueList.get(i).getId();
             String name = bloqueList.get(i).getNombre();
             double lat = bloqueList.get(i).getLatitud();
             double lon = bloqueList.get(i).getLongitud();
@@ -178,55 +190,89 @@ public class MapsActivity extends AppCompatActivity  implements
                     .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
         }
 
-//        mMap.addMarker(new MarkerOptions().position(eafit).title("Porteria 1 Peatonal Av. Las Vegas Eafit")
-//                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.location)));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(eafit));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(16.0f));
         mMap.setOnMarkerClickListener(this);
+
         // Ubicacion del Usuario
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             mMap.setMyLocationEnabled(true);
+            //mMap.getUiSettings().setMyLocationButtonEnabled(true);
         } else {
             System.out.println("Dafuq");
         }
-        mMap.getUiSettings().setMyLocationButtonEnabled(true);
 
     }
+
     /**
      * Método que se llama cuando oprimo el My Location Button
      */
     @Override
     public boolean onMyLocationButtonClick() {
-        return false;
+        return true;
     }
 
     /**
-     *
-     * Método que se llama cuando oprimo el Marker me salta a otra actividad
+     * Método que se llama cuando oprimo el Marker para saltar a otra actividad
      */
-        @Override
-        public boolean onMarkerClick(Marker marker) {
+    @Override
+    public boolean onMarkerClick(Marker marker) {
 
-            final Context con = this;
-            Intent intent = new Intent(con, InfoBloq.class);
+        final Context con = this;
+        Intent intent = new Intent(con, InfoBloq.class);
 
-            for (int i = 0;i<bloqueList.size();i++){
-                if(bloqueList.get(i).getNombre().equals(marker.getTitle())){
-                    //Toast.makeText(this,marker.getTitle(),Toast.LENGTH_LONG).show();
-                    bloq.Datos(bloqueList.get(i).getNombre(), bloqueList);
-                    intent.putExtra("title", bloqueList.get(i).getNombre());
-                    intent.putExtra("des",bloqueList.get(i).getDescripcion());
-                    intent.putExtra("numClass",bloqueList.get(i).getNumSalones());
-                    startActivity(intent);
-                }
+        for (int i = 0; i < bloqueList.size(); i++) {
+            if (bloqueList.get(i).getNombre().equals(marker.getTitle())) {
+                //Toast.makeText(this,marker.getTitle(),Toast.LENGTH_LONG).show();
+                bloq.Datos(bloqueList.get(i).getNombre(), bloqueList);
+                intent.putExtra("title", bloqueList.get(i).getNombre());
+                intent.putExtra("des", bloqueList.get(i).getDescripcion());
+                intent.putExtra("numClass", bloqueList.get(i).getNumSalones());
+                intent.putExtra("url", bloqueList.get(i).getURL());
+                startActivity(intent);
             }
-            /*if (marker.getTitle().equals("Rectoria, Dirección de docencia, Centro de Informatica, Departamento de practicas")){
-                //final Context con = this;
-                //Intent intent = new Intent(con, InfoBloq.class);
-
-            }*/
+        }
         return false;
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client2.connect();
+        Action viewAction = Action.newAction(
+                Action.TYPE_VIEW, // TODO: choose an action type.
+                "Maps Page", // TODO: Define a title for the content shown.
+                // TODO: If you have web page content that matches this app activity's content,
+                // make sure this auto-generated web page URL is correct.
+                // Otherwise, set the URL to null.
+                Uri.parse("http://host/path"),
+                // TODO: Make sure this auto-generated app URL is correct.
+                Uri.parse("android-app://com.eafit.map_u.mapu/http/host/path")
+        );
+        AppIndex.AppIndexApi.start(client2, viewAction);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        Action viewAction = Action.newAction(
+                Action.TYPE_VIEW, // TODO: choose an action type.
+                "Maps Page", // TODO: Define a title for the content shown.
+                // TODO: If you have web page content that matches this app activity's content,
+                // make sure this auto-generated web page URL is correct.
+                // Otherwise, set the URL to null.
+                Uri.parse("http://host/path"),
+                // TODO: Make sure this auto-generated app URL is correct.
+                Uri.parse("android-app://com.eafit.map_u.mapu/http/host/path")
+        );
+        AppIndex.AppIndexApi.end(client2, viewAction);
+        client2.disconnect();
+    }
 }
