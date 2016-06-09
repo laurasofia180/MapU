@@ -1,9 +1,0 @@
-<% @blocks.each do |block| %>
-<h1><%= "Bloque Nº:" %></h1>
-	<h1><%= link_to block.NoBloque , block %></h1>
-	<div><%= "IdBloque:" %></div>
-	<div>
- 	  <%= block.IdBloque %> -<%= link_to "Eliminar", block, method: :delete,
- 	   class:"red" %>
-	</div>
-<%end%>

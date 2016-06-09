@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @block.nombre %>
+</p>
+
+<p>
+  <strong>Latitud:</strong>
+  <%= @block.latitud %>
+</p>
+
+<p>
+  <strong>Longitud:</strong>
+  <%= @block.longitud %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @block.descripcion %>
+</p>
+
+<p>
+  <strong>Numsalones:</strong>
+  <%= @block.numSalones %>
+</p>
+
+<p>
+  <strong>Imagen:</strong>
+  <%= @block.imagen %>
+</p>
+
+<%= link_to 'Edit', edit_block_path(@block) %> |
+<%= link_to 'Back', blocks_path %>
